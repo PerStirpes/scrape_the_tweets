@@ -5,7 +5,7 @@ import csv
 # B=[]
 # C=[]
 
-with open("tweets_2.html", "r") as f:
+with open("tweets.html", "r") as f:
     
     contents = f.read()
 
@@ -13,5 +13,3 @@ with open("tweets_2.html", "r") as f:
 
     for tag in soup.find_all("li"):
         print("{0}: {1}".format(tag.name, tag.text))
-        
-

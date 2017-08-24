@@ -5,10 +5,9 @@ import csv
 
 file = urlopen("file:///Users/booboo/Rithm/scrape_the_tweets/tweets.html").read()
 # url = 'file://Users/booboo/Rithm/scrape_the_tweets/tweets.html'
-# data = requests.get(url)
+data = requests.get(url)
 # data = urllib.request.urlopen(url).read()
-# soup = bs4.BeautifulSoup(data, "html.parser")
-soup = BeautifulSoup(file, 'html.parser')
+soup = bs4.BeautifulSoup(data, "html.parser")
 links = soup.select("data.data-date")
 letters = soup.find_all("li", class_="visible")
 
