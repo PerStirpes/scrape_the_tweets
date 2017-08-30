@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>   🦄   </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#00d1b2">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@2_up">
+  <title>  🦄   </title>
+
 </head>
 <style>
-text {
+  text {
   font: 26px;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
@@ -22,13 +27,50 @@ text {
   fill: hsl(94, 60%, 50%);
 }
 
+#unicorn-btn {
+  transition: transform 0.3s ease-in-out;
+}
+
+#unicorn-btn:hover {
+  transform: scale(2.5);
+}
+
+#unicorn-icon {
+  margin-top: -80px;
+  margin-bottom: 20px;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  background: #bbb;
+}
 </style>
 <body>
-  <svg width="960" height="960"></svg>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="main.css">
+<a id="unicorn-btn" class="nav-item" href="https://sindresorhus.com/unicorn" title="Click me!">🦄</a>
+
+  <svg width="vw 100%" height="300"></svg>
+
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="src/app.js"></script>
+  <script src="src/cornify.js"></script>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+  <script src="src/easterEgg.js"></script>
 </body>
-</html>🦄
+</html>
 
 
 
