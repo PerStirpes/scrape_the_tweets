@@ -77,6 +77,5 @@
             document.querySelector('#scroll-hint').classList.add('hidden');
         }
     }
-
     document.addEventListener('scroll', hideScrollHint, {passive: true});
 })();
