@@ -28,7 +28,7 @@
 }
 
 #unicorn-btn {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 #unicorn-btn:hover {
@@ -45,34 +45,51 @@ html, body {
   margin: 0;
   border: 0;
   outline: 0;
+  box-sizing: border-box;
+  background: white;
+  }
+
+h1{
+  display: grid;
+
+  color: white;
+  font-size: 50px;
+}
+svg{
+  width: 100vw;
+  height: 30vh;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+section{
+  display: grid;
+  grid-template-rows: 1fr 1fr 5fr;
+  align-self: center;
 
+}
 svg {
-  background: #bbb;
+  background: white;
 }
 </style>
 <body>
 <link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="main.css">
-<a id="unicorn-btn" class="nav-item" href="https://sindresorhus.com/unicorn" title="Click me!">🦄</a>
 
-  <svg width="vw 100%" height="300"></svg>
+<section class="explicitly-placed">
+  <ul>
+    <h1>d3 general pattern</h1>
+  </ul>
+  <ul>
+    <a id="unicorn-btn" href="" title="Click me!">🦄</a>
+  </ul>
+  <ul>
+      <marquee><svg font-family='Viva Beautiful W01 Regu5374909'></svg>
+  </ul>
+  <ul>
+
+  </ul>
+</section>
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="src/app.js"></script>
-  <script src="src/cornify.js"></script>
-  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
-  <script src="src/easterEgg.js"></script>
 </body>
 </html>
-
-
-
-
-
