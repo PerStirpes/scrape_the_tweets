@@ -1,25 +1,31 @@
 # scrape_the_tweets
 
 
-Thinking with Joins
+[Thinking with Joins](https://bost.ocks.org/mike/join/)
 Say you’re making a basic scatterplot using D3, and you need to create some SVG circle elements to visualize your data. You may be surprised to discover that D3 has no primitive for creating multiple DOM elements. Wait, WAT?
 
 Sure, there’s the append method, which you can use to create a single element.
 
 Here svg refers to a single-element selection containing an <svg> element created previously (or selected from the current page, say).
+
+```
 svg.append("circle")
     .attr("cx", d.x)
     .attr("cy", d.y)
     .attr("r", 2.5);
+```
+
 But that’s just a single circle, and you want many circles: one for each data point. Before you bust out a for loop and brute-force it, consider this mystifying sequence from one of D3’s examples.
 
 Here data is an array of JSON objects with x and y properties, such as: [{"x": 1.0, "y": 1.1}, {"x": 2.0, "y": 2.5}, …].
+```
 svg.selectAll("circle")
   .data(data)
   .enter().append("circle")
     .attr("cx", function(d) { return d.x; })
     .attr("cy", function(d) { return d.y; })
     .attr("r", 2.5);
+ ```   
 This code does exactly what you need: it creates a circle element for each data point, using the x and y data properties for positioning. But what’s with the selectAll("circle")? Why do you have to select elements that you know don’t exist in order to create new ones? WAT.
 
 Here’s the deal. Instead of telling D3 how to do something, tell D3 what you want. You want the circle elements to correspond to data. You want one circle per datum. Instead of instructing D3 to create circles, then, tell D3 that the selection "circle" should correspond to data. This concept is called the data join:
@@ -61,7 +67,8 @@ circle.enter().append("circle")
     .attr("cy", function(d) { return d.y; });
 ```
 
-To control how data is assign­ed to elements, you can pro­vide a key function.
+> To control how data is assigned to elements, you can pro­vide a key function.
+
 Whenever this code is run, it recomputes the data join and maintains the desired correspondence between elements and data. If the new dataset is smaller than the old one, the surplus elements end up in the exit selection and get removed. If the new dataset is larger, the surplus data ends up in the enter selection and new nodes are added. If the new dataset is exactly the same size, then all the elements are simply updated with new positions, and no elements are added or removed.
 
 Thinking with joins means your code is more declarative: you handle these three states without any branching (if) or iteration (for). Instead you describe how elements should correspond to data. If a given enter, update or exit selection happens to be empty, the corresponding code is a no-op.
