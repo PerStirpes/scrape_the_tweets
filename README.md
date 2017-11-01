@@ -1,6 +1,4 @@
-# scrape_the_tweets
-
-
+## Working in progress
 [Thinking with Joins](https://bost.ocks.org/mike/join/)
 Say you’re making a basic scatterplot using D3, and you need to create some SVG circle elements to visualize your data. You may be surprised to discover that D3 has no primitive for creating multiple DOM elements. Wait, WAT?
 
