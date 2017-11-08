@@ -134,4 +134,4 @@ Thinking with joins means your code is more declarative: you handle these three 
 
 Joins also let you target operations to specific states, if needed. For example, you can set constant attributes (such as the circle’s radius, defined by the "r" attribute) on enter rather than update. By reselecting elements and minimizing DOM changes, you vastly improve rendering performance! Similarly, you can target animated transitions to specific states. For example, for entering circles to expand-in:
 
-Now you’re thinking with joins!
+Now you’re thinking with joins
